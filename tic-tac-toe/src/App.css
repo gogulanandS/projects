@@ -1,0 +1,418 @@
+<<<<<<< HEAD
+/* App container */
+.app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 30px;
+}
+
+/* Board */
+.board {
+  width: 500px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Cells */
+.cell {
+  width: 100%;
+  aspect-ratio: 1;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #333;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  position: relative;
+  transition: 0.2s;
+}
+
+.cell:hover {
+  background-color: #d5d5d5;
+}
+
+/* Winning cells */
+.cell.win {
+  background-color: #ffcccc;
+  border: 3px solid red;
+}
+
+/* Red strike effect */
+.cell.win::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  background-color: red;
+  top: 50%;
+  left: 10%;
+  transform: rotate(45deg);
+}
+
+/* Status */
+.status {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* Restart button */
+.restart {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 6px;
+}
+
+.restart:hover {
+  background-color: #555;
+}
+/* Light Theme */
+.app.light {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* Dark Theme */
+.app.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Board styles for themes */
+.app.dark .board {
+  background-color: #333;
+}
+
+.app.light .board {
+  background-color: bisque;
+}
+
+/* Cells */
+.app.dark .cell {
+  background-color: #555;
+  color: white;
+}
+
+.app.light .cell {
+  background-color: #e0e0e0;
+  color: black;
+}
+.change{
+  background-color: red;
+}
+=======
+body {
+  background-color: #f4f7f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.todo-container {
+  background: white;
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+}
+
+.todo-form input:focus {
+  border-color: #007bff;
+}
+
+.todo-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.empty-state {
+  text-align: center;
+  color: #888;
+}
+/* Style for custom upload wrapper button */
+.file-input-wrapper {
+  position: relative;
+}
+
+.file-input-wrapper input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-label {
+  display: inline-block;
+  padding: 10px;
+  background: #6c757d;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.todo-text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.todo-text {
+  font-size: 16px;
+}
+
+/* Open PDF Button Link Style */
+.pdf-view-btn {
+  align-self: flex-start;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.pdf-view-btn:hover {
+  background: #218838;
+}
+/* Color Palette Settings Mapping */
+.app-wrapper.light {
+  --bg-global: #f4f7f6;
+  --bg-card: #ffffff;
+  --text-main: #333333;
+  --text-muted: #888888;
+  --border-color: #e0e0e0;
+  --item-bg: #f9f9f9;
+}
+
+.app-wrapper.dark {
+  --bg-global: #121212;
+  --bg-card: #1e1e1e;
+  --text-main: #f0f0f0;
+  --text-muted: #aaaaaa;
+  --border-color: #333333;
+  --item-bg: #2a2a2a;
+}
+
+/* Global Container Styling resets */
+.app-wrapper {
+  background-color: var(--bg-global);
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.todo-container {
+  background: var(--bg-card);
+  width: 450px;
+  height: fit-content;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-section h1 {
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* Theme Button Design Styling */
+.theme-toggle-btn {
+  background: none;
+  border: 2px solid var(--border-color);
+  color: var(--text-main);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.todo-form input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+  border-radius: 6px;
+  outline: none;
+}
+
+.submit-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.file-input-wrapper {
+  position: relative;
+}
+
+.file-input-wrapper input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-label {
+  display: inline-block;
+  padding: 10px;
+  background: #6c757d;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--item-bg);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.todo-list li.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.todo-text {
+  color: var(--text-main);
+}
+
+.todo-text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.pdf-view-btn {
+  align-self: flex-start;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+}
+>>>>>>> d7112d05cd29474dc8b9ad752a9a6e00f9ae6008
