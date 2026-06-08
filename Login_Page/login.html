@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tusion Login</title>
+     <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <script src="login.js"></script>
+    <div class="login-card">
+         <img id="image" src="WhatsApp Image 2026-05-21 at 10.54.55 AM.jpeg" alt="Logo">
+        <h1>NVSC Login</h1>
+        <div id="loginForm">
+        <form onsubmit="checkLoginPage(event)">
+            <label for="loginname">Name: </label>
+            <input type="text" name="loginname" id="loginname" value="abc" placeholder="Enter Your Name" required>
+
+            <label for="loginemail">Email: </label>   
+            <input type="email" id="loginemail" name="loginemail" value="abc@gmail.com" placeholder="Enter Your Email" required>
+
+            <label for="loginpassword">Password: </label>
+            <input type="password" id="loginpassword" name="loginpassword" value="123" placeholder="Enter password" required>
+            
+            <a href="#" onclick="showForgot()">Forgot Password?</a>
+            
+            <button type="submit" onclick="checkLoginPage(event)">Login</button>
+        </form>
+        
+        </div>
+        <div id="forgotForm" style="display:none;">
+        <form onsubmit="showOtp()" >
+           
+            <label for="forgotemail">Email: </label>   
+            <input type="email" id="forgotemail" name="forgotemail" placeholder="Enter Your Email" required>
+          
+            
+            <a href="login.html">Back to Login</a>
+            
+            <button type="submit" onclick="checkForgotPasswordPage(event)">Submit</button>
+        </form>
+    </div>
+    <div id="otpForm" style="display:none;">
+        
+        <form onsubmit>
+           
+            <label for="otp">OTP: </label>   
+            <input type="text" id="otp" value="" name="otp" placeholder="Enter Your OTP" required>
+          
+            
+            <a href="login.html">Back to Login</a>
+            <button type="submit" onclick="checkOtpPage(event)">Submit</button>
+        </form>
+        </div>
+    
+          <div id="resetForm" style="display:none;">    
+        <form >
+          
+            <label for="newpassword">Password: </label>
+            <input type="text" value="" id="newpassword" name="newpassword"  placeholder="Enter password" required>
+            <label for="repassword">repassword</label>
+            <input  type="password" id="repassword" oninput="checkSpelling()" name="repassword" placeholder="Enter password" required>
+            <a href="login.html">Back to Login</a>
+            
+
+            <button type="submit">Login</button>
+        </form>
+        
+        <p id="sign" style="text-align: center;">or signed up using</p>
+    </div>
+    </div>
+</body>
+</html>
